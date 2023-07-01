@@ -2,11 +2,9 @@ databases:
   - name: juridico_gpt
     databaseName: juridico_gpt
     user: juridico_gpt
-    plan: free
 
 services:
   - type: web
-    plan: free
     name: juridico_gpt
     runtime: ruby
     buildCommand: "./bin/render-build.sh"
