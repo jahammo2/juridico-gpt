@@ -1,20 +1,20 @@
 databases:
-  - name: furnitur
-    databaseName: furnitur
-    user: furnitur
+  - name: juridico-gpt
+    databaseName: juridico-gpt
+    user: juridico-gpt
     plan: free
 
 services:
   - type: web
     plan: free
-    name: furnitur
+    name: juridico-gpt
     runtime: ruby
     buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec puma -C config/puma.rb"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: furnitur
+          name: juridico-gpt
           property: connectionString
       - key: RAILS_MASTER_KEY
         sync: false
